@@ -1,4 +1,5 @@
 import React from "react";
+import icon from "../../src/asset/icons/bt_add_to_cart.svg";
 import "../styles/ProductInfo.scss";
 
 const ProductInfo = () => {
@@ -16,7 +17,7 @@ const ProductInfo = () => {
           function, add your hall or workspace.
         </p>
         <button className="primary-button add-to-cart-button">
-          <img src="./icons/bt_add_to_cart.svg" alt="add to cart" />
+          <img src={icon} />
           Add to cart
         </button>
       </div>

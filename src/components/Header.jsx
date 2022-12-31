@@ -1,14 +1,22 @@
-import React from "react";
-import logo from "../../public/assets/logo_yard_sale.svg";
-import icon from "../../public/icons/icon_shopping_cart.svg";
-import '../styles/Header.scss';
+import React, { useState } from "react";
+import Menu from "../components/Menu";
+import "../../src/styles/Header.scss";
 
-const header = () => {
+import menu from "../asset/icons/icon_menu.svg";
+import logo from "../asset/logos/logo_yard_sale.svg";
+import shoppingCart from "../asset/icons/icon_shopping_cart.svg";
+
+const Header = () => {
+  const [toggle, setToggle] = useState(false);
+
+  const handleToggle = () => {
+    setToggle(!toggle);
+  };
   return (
     <nav>
-      <img src="./icons/icon_menu.svg" alt="menu" className="menu" />
+      <img src={menu} alt="menu" className="menu" />
       <div className="navbar-left">
-        <img src="{logo}" alt="logo" className="logo" />
+        <img src={logo} alt="logo" className="nav-logo" />
         <ul>
           <li>
             <a href="/">All</a>
@@ -32,15 +40,19 @@ const header = () => {
       </div>
       <div className="navbar-right">
         <ul>
-          <li className="navbar-email">platzi@example.com</li>
+          <li className="navbar-email" onClick={handleToggle}>
+            platzi@example.com
+          </li>
           <li className="navbar-shopping-cart">
-            <img src={icon} alt="shopping cart" />
+            <img src={shoppingCart} alt="shopping cart" />
             <div>2</div>
           </li>
         </ul>
       </div>
+      {toggle && <Menu />}
+      
     </nav>
   );
 };
 
-export default header;
+export default Header;

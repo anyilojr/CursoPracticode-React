@@ -1,4 +1,4 @@
-@import 'vars';
+@import '../styles/vars';
 
 nav {
   display: flex;
@@ -85,4 +85,7 @@ nav {
   .navbar-email {
     display: none;
   }
+}
+.navbar-email:hover {
+  cursor: pointer;
 }
